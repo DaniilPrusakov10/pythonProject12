@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование ответов бота</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .response-list {
+            margin-top: 20px;
+        }
+        .response-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Редактирование ответов бота</h1>
+
+<!-- Форма для добавления нового ответа -->
+<form action="{{ url_for('edit_responses') }}" method="POST">
+    <label for="question">Вопрос:</label>
+    <input type="text" id="question" name="question" placeholder="Введите вопрос" required>
+
+    <label for="response">Ответ:</label>
+    <textarea id="response" name="response" placeholder="Введите ответ" required></textarea>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<hr>
+
+<!-- Список всех ответов -->
+<h2>Существующие ответы</h2>
+<div class="response-list">
+    <ul>
+        {% for response in responses %}
+        <li>
+            <strong>Вопрос:</strong> {{ response.question }}<br>
+            <strong>Ответ:</strong> {{ response.response }}
+            <form action="{{ url_for('delete_response', response_id=response.id) }}" method="POST" style="display:inline;">
+                <button type="submit" style="background-color: red;">Удалить</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<hr>
+
+<a href="{{ url_for('manager_dashboard') }}">Назад к панели управляющего</a>
+
+</body>
+</html>

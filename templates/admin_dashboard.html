@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель руководителя</title>
+</head>
+<body>
+    <h1>Добро пожаловать, руководитель!</h1>
+    <a href="{{ url_for('edit_responses') }}">Редактировать ответы бота</a>
+    <br>
+    <a href="{{ url_for('stats') }}">Посмотреть статистику сообщений</a>
+    <br>
+    <a href="{{ url_for('stats_chart') }}">Посмотреть график статистики</a>
+    <br>
+    <a href="{{ url_for('logout') }}">Выйти</a>
+</body>
+</html>

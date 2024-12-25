@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница - Бот с статистикой</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Добро пожаловать в бот Прусакова И Дудорова!</h1>
+            <p class="lead">Этот бот отслеживает сообщения и показывает статистику пользователей.</p>
+            <hr class="my-4">
+            <p>Нажмите кнопку, чтобы взаимодействовать с ботом.</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Запуск бота</h5>
+                        <p class="card-text">Нажмите, чтобы начать работу с ботом.</p>
+                        <form action="/start_bot" method="post">
+                            <button type="submit" class="btn btn-primary btn-block">Запустить бот</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Статистика сообщений</h5>
+                        <p class="card-text">Посмотрите статистику по сообщениям пользователей.</p>
+                        <a href="/stats" class="btn btn-info btn-block">Посмотреть статистику</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="text-center mt-5">
+            <p>© 2024 Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
